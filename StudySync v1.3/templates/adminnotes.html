@@ -1,14 +1,12 @@
+{% extends "nav-menu.html" %}
+{% block head %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="{% static "CJS\notes\adminnotes.css" %}">
+<title>Notes</title>
+{% endblock head %}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="{% static "CJS\notes\adminnotes.css" %}">
-	<title>Notes</title>
-</head>
+{% block content %}
+{% load static %}
 <body>
 	<div id="yesorno">
 		<div class="yesorno-box">
@@ -20,8 +18,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	{% if context %}
 	<div class="select-container">
 		<form id="filternotes" method='post' action={% url "filternotesadmin" %} enctype="multipart/form-data">
@@ -46,11 +42,8 @@
 			</div>
 		</form>
 	</div>
-
-
 	<!-- Notes Area -->
 	<div class="notes-container">
-		
 		{% for note in context %}
 		<div class="notes">
 			<span class="notes-head">{{note.title}}</span>
@@ -75,7 +68,6 @@
 	{% endif %}
 	<script>const deleteBtn = document.querySelectorAll(".Delete");
 		const yesorno = document.getElementById("yesorno");
-
 		// This function hides the pop up
 		function hidePopup() {
 			yesorno.style.display = "none";
@@ -105,8 +97,5 @@
 				submitForm(); // Call the function to submit the form
 			});
 		}
-
 	</script>
-</body>
-
-</html>
+{% endblock content %}

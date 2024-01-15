@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "nav-menu.html" %}
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static "CJS\notice\adminnotice.css" %}">
+<title>Notice</title>
+{% endblock head %}
 
-<head>
-	{% load static %}
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="{% static "CJS\notice\adminnotice.css" %}">
-	<title>Notice Board</title>
-</head>
-
-<body>
+{% block content %}
+{% load static %}
 	<div id="yesorno">
 		<div class="yesorno-box">
 			<span>Are you sure?</span>
@@ -23,7 +19,6 @@
 	</div>
 
 	<!-- Notice Board Area -->
-
 	<div class="notice-board-container">
 		{% if context %}
 		{% for notice in context %}
@@ -75,6 +70,4 @@
 			}
 	
 	</script>
-</body>
-
-</html>
+{% endblock content %}

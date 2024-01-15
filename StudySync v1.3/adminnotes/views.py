@@ -3,6 +3,7 @@ from adminnotes.models import Notes
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
+
 @csrf_exempt
 def adminnotes(request):
     context={'context':reversed(Notes.objects.all())}

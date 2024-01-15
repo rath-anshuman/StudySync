@@ -37,6 +37,8 @@ from notice import views as noticeviews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='HOME'),
+    path('add/',views.add,name='Add'),
+    path('tryy/',views.tryy,name='TRY'),
     # -----notes-------
     path('add_notes/',addnoteviews.addnotes,name='Add Notes'),
     path('admin_notes/',adminnoteviews.adminnotes,name='Admin Notes'),
@@ -49,5 +51,14 @@ urlpatterns = [
     path('admin_notice/',adminnoticeviews.adminnotice,name='Admin Notice'),
     path('delete_notice/<int:id>/', adminnoticeviews.delete_notice, name='delete_notice'),
     path('viewnotice/',noticeviews.viewnotice,name='View Notice'),
+
+
+
+    #-------------------                                      ------------------------
+    #------------------- url atributes redirecting (menu bar) ------------------------
+    #-------------------                                      ------------------------
+    path('admin_notes/admin_notes',adminnoteviews.adminnotes,name='Admin Notes'),
+    path('admin_notice/admin_notice',adminnoticeviews.adminnotice,name='Admin Notice'),
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
