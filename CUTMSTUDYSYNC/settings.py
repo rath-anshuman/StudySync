@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-a)k=^17lg_a)qbev9dka_o)#(5o-vtzg(%#z7nrj_l=$#9jur&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['http://127.0.0.1:8000/','.cutmbol.com','.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1','.cutmbol.com','.vercel.app']
 
 # ALLOWED_HOSTS = ['5000.cutmbol.com']
 # X_FRAME_OPTIONS = 'ALLOWALL'
