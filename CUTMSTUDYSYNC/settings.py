@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1','.cutmbol.com','.vercel.app']
 
 # ALLOWED_HOSTS = ['5000.cutmbol.com']
-# X_FRAME_OPTIONS = 'ALLOWALL'
+X_FRAME_OPTIONS = 'ALLOWALL'
 # CSRF_COOKIE_DOMAIN = '5000.cutmbol.com'
 # CSRF_COOKIE_SECURE = True
 
@@ -78,6 +78,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'CUTMSTUDYSYNC.wsgi.application'
 
 
@@ -86,11 +87,18 @@ WSGI_APPLICATION = 'CUTMSTUDYSYNC.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER':'postgres',
+        'PASSWORD':'rwZUksnfTYZHruEriuKMfYltQXCRbzSG',
+        'HOST':'roundhouse.proxy.rlwy.net',
+        'PORT':'52293',
+    },
+    # 'newdb': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

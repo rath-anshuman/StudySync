@@ -1,1 +1,0 @@
-from CUTMSTUDYSYNC.wsgi import application
